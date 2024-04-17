@@ -21,10 +21,10 @@ export const FirstDisplay: React.FC<Props> = ({height, width}) => {
 
     return (
 
-        <section id='first-display' className={`w-full  min-h-[100vh] flex flex-col justify-between bg-[#758088]`}>
+        <section id='first-display' className={`w-full  min-h-[100vh] flex flex-col gap-[45px] bg-[#758088]`}>
 
             <HeaderMobile height={height} width={width}/>
-            <div className={'flex flex-col gap-1'}>
+            <div className={'flex flex-col gap-1 pl-[28px] pr-[28px]'}>
                 <Image src={'/cover-mobile/image_55.png'} alt={'cover picture'} width={430} height={195} priority/>
                 <Image src={'/cover-mobile/image_56.png'} alt={'cover picture'} width={430} height={195} priority/>
                 <Image src={'/cover-mobile/image_57.png'} alt={'cover picture'} width={430} height={195} priority/>
