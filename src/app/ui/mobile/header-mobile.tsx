@@ -2,24 +2,36 @@
 import Image from "next/image";
 import React, {useEffect, useState} from "react";
 
+interface Props {
+    height: number;
+    width: number;
+}
 
-export const HeaderMobile = () => {
-
-    const [height, setHeight] = useState<number>(0)
-    useEffect(() => {
-        setHeight(window.innerHeight)
-    }, [])
+export const HeaderMobile: React.FC<Props> = ({height, width}) => {
+    const mobileBig = {
+        logo: 303,
+        button: 25,
+        h2: 'font-lg',
+    }
+    const mobileSmall = {
+        logo: 270,
+        button: 22,
+        h2: 'font-base'
+    }
+    const sizes = width < 400 ? mobileSmall : mobileBig
 
     return (
-        <header className={'pl-7 pr-7'}>
-            <div className={ 'mt-3 flex justify-between items-start'}>
-                <Image src={'/svg/logo_mobile.svg'} alt={'logo mobile'} width={210} height={82} priority className={'cursor-pointer'}/>
+        <header className={'p-[28px] w-full h-[90px] text-[#293139]'}>
+
+            <div className={ 'flex justify-between items-start h-auto'}>
+                <Image src={'svg/logo_mobile.svg'} alt={'my logo'} width={sizes.logo} height={'0'} priority/>
                 <button onClick={() => console.log('menu click')}>
-                    <Image src={'svg/menu_open.svg'} alt={'menu button'} width={33} height={33} priority/>
+                    <Image src={'svg/menu_open.svg'} alt={'menu button'} width={sizes.button} height={22} priority/>
                 </button>
             </div>
-            <h1 className={'text-[#293139] mt-[22px] text-base tracking-wide'}>colorista digital </h1>
-            <h2>{height}</h2>
+            <h2 className={`mt-[10px] ${sizes.h2} tracking-wide`}>colorista digital </h2>
+
+
         </header>
     )
 }

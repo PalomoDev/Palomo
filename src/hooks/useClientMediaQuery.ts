@@ -2,26 +2,20 @@
 
 import { useEffect, useState } from 'react';
 
-type MediaWidth = number
+interface WindowSize {
+    width: number;
+    height: number;
+}
 
-export default function useClientMediaQuery(width: MediaWidth): boolean | null {
-    const query = `(max-height: ${width}px)`
-    const [matches, setMatches] = useState<boolean | null>(null);
+export default function useClientMediaQuery(): WindowSize  {
+    const [innerWidth, setWidth] = useState<number>(0)
+    const [innerHeight, setHeight] = useState<number>(0)
+
 
     useEffect(() => {
-        const mediaQueryList = window.matchMedia(query);
+        setWidth(window.innerWidth)
+        setHeight(window.innerHeight)
+    });
 
-        const handleMatchChange = (e: MediaQueryListEvent) => {
-            setMatches(e.matches);
-        };
-
-        mediaQueryList.addEventListener('change', handleMatchChange);
-        setMatches(mediaQueryList.matches);
-
-        return () => {
-            mediaQueryList.removeEventListener('change', handleMatchChange);
-        };
-    }, [query]);
-
-    return matches;
+    return {width: innerWidth, height: innerHeight};
 }
