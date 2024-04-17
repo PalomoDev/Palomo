@@ -3,26 +3,49 @@ import Image from "next/image";
 import React from "react";
 import {FooterMobile} from "@/app/ui/mobile/footer";
 
-export const SecondDisplay = () => {
+const LARGE_TEXT = 'He received his Bachelors degree in Kolozsvár, where he majored from Cinematography Photography Media and later acquired his Masters degree at the University of Art and Design in the field of Photography, Film and Post-Production.\n' +
+    '                        After graduating he co-founded a small animation and film production company called Fox in the Box. While he enjoyed shooting shorts, commercials and creating animations, he found his true passion in color grading.'
+const SMALL_TEXT = 'He received his Bachelors degree in Kolozsvár, where he majored from Cinematography Photography Media and later acquired his Masters degree at the University of Art and Design in the field of Photography, Film and Post-Production.'
+interface Props {
+    height: number;
+    width: number;
+}
+export const SecondDisplay: React.FC<Props> = ({height, width}) => {
+    console.log(height)
+    const mobileBig = {
+        foto: 384,
+        footer: 20,
+        h2: 'font-xl',
+        text: LARGE_TEXT,
+
+
+    }
+    const mobileSmall = {
+        foto: 280,
+        footer: 20,
+        h2: 'font-lg',
+        text: SMALL_TEXT,
+    }
+    const sizes = height < 700 ? mobileSmall : mobileBig
+
     return (
-        <section id='second-display' className={`w-full h-[100vh] flex flex-col justify-between items-center bg-[#758088] p-7`}>
-
-
-
+        <section id='second-display' className={`w-full min-h-[100vh] max-h-[100vh] flex flex-col justify-between items-center bg-[#758088] p-7`}>
             <div>
-                <Image src={'/cover-mobile/portret_mobile.png'} alt={'soy mi'} width={384} height={384} priority={false}/>
-                <div className={'mt-9'}>
-                    <h2 className={'mt-5 text-xl tracking-wide uppercase font-black  text-[#293139]'}>
+                <div className={'w-full h-auto bg-gray-400'}>
+                    <Image src={'/cover-mobile/portret_mobile.png'} alt={'soy mi'} width={sizes.foto} height={sizes.foto} className={'w-full'} priority={false}/>
+                </div>
+
+                <div className={'mt-4'}>
+                    <h2 className={`${sizes.h2} tracking-wide uppercase font-black  text-[#293139]`}>
                         Hola! <br/> SOY SERGIO PALOMO, <br/> COLORISTA  Y FOTÓGRAFO.
                     </h2>
                     <p className={'mt-3 text-justify font-light text-sm text-[#293139]'}>
-                        He received his Bachelors degree in Kolozsvár, where he majored from Cinematography Photography Media and later acquired his Masters degree at the University of Art and Design in the field of Photography, Film and Post-Production.
-                        After graduating he co-founded a small animation and film production company called Fox in the Box. While he enjoyed shooting shorts, commercials and creating animations, he found his true passion in color grading.
+                        {sizes.text}
                     </p>
                 </div>
             </div>
 
-            <FooterMobile/>
+            <FooterMobile height={sizes.footer} />
 
         </section>
     )

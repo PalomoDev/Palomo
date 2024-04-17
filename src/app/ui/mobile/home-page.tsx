@@ -10,13 +10,13 @@ import useClientMediaQuery from "@/hooks/useClientMediaQuery";
 export const HomePageMobile = () => {
 
    const windowSize = useClientMediaQuery()
-    console.log(windowSize)
+
 
     return (
         <>
 
             <FirstDisplay height={windowSize.height} width={windowSize.width}/>
-            <SecondDisplay/>
+            <SecondDisplay height={windowSize.height} width={300}/>
         </>
 
 
