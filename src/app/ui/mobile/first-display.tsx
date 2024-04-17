@@ -21,7 +21,7 @@ export const FirstDisplay: React.FC<Props> = ({height, width}) => {
 
     return (
 
-        <section id='first-display' className={`w-full  min-h-[100vh-100px] flex flex-col justify-between bg-[#758088]`}>
+        <section id='first-display' className={`w-full  min-h-[100vh] flex flex-col justify-between bg-[#758088]`}>
 
             <HeaderMobile height={height} width={width}/>
             <div className={'flex flex-col gap-1'}>
