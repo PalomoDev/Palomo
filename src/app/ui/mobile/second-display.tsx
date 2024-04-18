@@ -32,7 +32,9 @@ export const SecondDisplay: React.FC<Props> = ({height, width}) => {
         <section id='second-display' className={`w-full min-h-[100vh] max-h-[100vh] flex flex-col justify-between items-center bg-[#758088] p-7`}>
             <div>
                 <div className={'w-full h-auto bg-gray-400'}>
-                    <Image src={'/cover-mobile/portret_mobile.png'} alt={'soy mi'} width={sizes.foto} height={sizes.foto} className={'w-full'} priority={false}/>
+                    <Image src={'/cover-mobile/portret_mobile.png'} alt={'soy mi'} width={sizes.foto} height={sizes.foto} className={'w-full filter-saturate-50'}
+
+                           priority={false}/>
                 </div>
 
                 <div className={'mt-4'}>

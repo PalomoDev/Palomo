@@ -15,7 +15,7 @@ export default function useClientMediaQuery(): WindowSize  {
     useEffect(() => {
         setWidth(window.innerWidth)
         setHeight(window.innerHeight)
-    });
+    }, []);
 
     return {width: innerWidth, height: innerHeight};
 }
