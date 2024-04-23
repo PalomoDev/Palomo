@@ -1,37 +1,31 @@
 'use client'
 import Image from "next/image";
 import React, {useEffect, useState} from "react";
+import MobilePopup from "@/app/ui/mobile/mobile-popup";
 
 interface Props {
-    height: number;
-    width: number;
+
 }
 
-export const HeaderMobile: React.FC<Props> = ({height, width}) => {
-    const mobileBig = {
-        logo: 303,
-        button: 25,
-        h2: 'font-lg',
-    }
-    const mobileSmall = {
-        logo: 270,
-        button: 22,
-        h2: 'font-base'
-    }
-    const sizes = width < 400 ? mobileSmall : mobileBig
+export const HeaderMobile: React.FC = () => {
+
+
+
+
+
 
     return (
-        <header className={'p-[28px] w-full h-[90px] text-[#293139]'}>
-
-            <div className={ 'flex justify-between items-start h-auto'}>
-                <Image src={'svg/logo_mobile.svg'} alt={'my logo'} width={sizes.logo} height={'0'} priority/>
-                <button onClick={() => console.log('menu click')}>
-                    <Image src={'svg/menu_open.svg'} alt={'menu button'} width={sizes.button} height={22} priority/>
+        <div className="grid grid-cols-4 border-b">
+            <div className="col-span-3 border-r h-24 flex flex-col w-full h-full pl-6 justify-center items-center gap-1" >
+                <Image src={'/svg/logo_mobile.svg'} alt={'logo'} width={'220'} height={'0'} sizes={'100vh'} className={'self-start'}/>
+                <h2 className={'text-[#DCDCDC] self-start'}> colorista digital </h2>
+            </div>
+            <div className="h-24 flex justify-center items-center">
+                <button>
+                    <Image src={'svg/menu_open.svg'} alt={'menu button'} width={22} height={22}/>
                 </button>
             </div>
-            <h2 className={`mt-[10px] ${sizes.h2} tracking-wide`}>colorista digital </h2>
-
-
-        </header>
+        </div>
     )
 }
+
