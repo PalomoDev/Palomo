@@ -10,7 +10,9 @@ interface Props {
 export const HeaderMobile: React.FC = () => {
 
 
-
+    const menuButtonClick = () => {
+        console.log('click')
+    }
 
 
 
@@ -21,7 +23,7 @@ export const HeaderMobile: React.FC = () => {
                 <h2 className={'text-[#DCDCDC] self-start'}> colorista digital </h2>
             </div>
             <div className="h-24 flex justify-center items-center">
-                <button>
+                <button onClick={menuButtonClick}>
                     <Image src={'svg/menu_open.svg'} alt={'menu button'} width={22} height={22}/>
                 </button>
             </div>
