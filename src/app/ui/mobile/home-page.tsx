@@ -14,11 +14,13 @@ export const HomePageMobile = () => {
 
    const windowSize = useClientMediaQuery()
 
+    console.log(windowSize.width, windowSize.height)
+
 
     return (
         <>
-
-            <section className={`w-full  h-screen bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
+            <div><p>{windowSize.width}</p><p>{windowSize.height}</p></div>
+            <section className={`w-full  min-h-[100vh] max-h-[100vh] bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
                 <div className={'h-24 border-b'}>
                     <HeaderMobile/>
                 </div>
