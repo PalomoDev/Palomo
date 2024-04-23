@@ -18,7 +18,7 @@ export const HomePageMobile = () => {
     return (
         <>
 
-            <section className={`w-full  h-screen bg-[#0C0601] grid grid-rows-[auto,1fr] `}>
+            <section className={`w-full  h-screen bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
                 <div className={'h-24 border-b'}>
                     <HeaderMobile/>
                 </div>
