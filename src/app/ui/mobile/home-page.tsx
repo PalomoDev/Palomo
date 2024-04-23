@@ -21,14 +21,14 @@ export const HomePageMobile = () => {
     return (
         <>
 
-            <section className={`w-full  min-h-screen bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
+            <section className={`w-full  min-h-screen h-auto bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
                 <div className={'h-24 border-b'}>
                     <HeaderMobile/>
                 </div>
 
 
                 <div className={`bg-[url(/cover-mobile/image_58.png)]  pb-6 bg-cover flex items-end justify-center`} style={{
-                    height: windowHeight-90
+                    height: windowHeight-96
                 }}>
                     <FooterMobile/>
 
