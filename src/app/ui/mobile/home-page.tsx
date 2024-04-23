@@ -18,10 +18,13 @@ export const HomePageMobile = () => {
     return (
         <>
 
-            <section className={`w-full  min-h-svh max-h-svh flex flex-col bg-[#0C0601]`}>
+            <section className={`w-full  min-h-svh max-h-dhv bg-[#0C0601] grid grid-rows-[auto,1fr] `}>
+                <div className={'h-24 border-b'}>
+                    <HeaderMobile/>
+                </div>
 
-                <HeaderMobile/>
-                <div className={'w-100 h-dvh bg-[url(/cover-mobile/image_58.png)] pb-6 bg-cover flex items-end justify-center'}>
+
+                <div className={'bg-[url(/cover-mobile/image_58.png)] pb-6 bg-cover flex items-end justify-center'}>
                     <FooterMobile/>
 
                 </div>
