@@ -1,4 +1,9 @@
-
+'use client'
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 import {HeaderMobile} from "@/app/ui/mobile/header-mobile";
@@ -7,7 +12,9 @@ import {HeaderMobile} from "@/app/ui/mobile/header-mobile";
 import useClientMediaQuery from "@/hooks/useClientMediaQuery";
 
 import React from "react";
-import {FooterMobile} from "@/app/ui/mobile/footer";
+
+
+import data from "@/app/lib/api/data/data.json"
 
 
 export const HomePageMobile = () => {
@@ -19,29 +26,36 @@ export const HomePageMobile = () => {
 
 
     return (
-        <>
+        <main className="flex flex-col min-h-[100vh] w-full bg-gray-900">
+            <div className={'h-[10vh] bg-[#0C0601] border-b'}>
+                <HeaderMobile/>
+            </div>
+            <div className={'h-[90vh] w-full'}>
+                <Swiper
 
-            <section className={`w-full bg-[#0C0601] grid grid-rows-[auto,1fr]`}>
-                <div className={'h-24 border-b'}>
-                    <HeaderMobile/>
-                </div>
+                    pagination={{ type: "bullets", clickable: true }}
+                    autoplay={true}
+                    loop={true}
+                    modules={[Autoplay, Navigation, Pagination]}
+                >
+                    {data.map(({ id, image, title}) => (
+                        <SwiperSlide key={id}>
+                            <div
+                                className={'h-[90vh] w-full'}
+                                style={{
+                                    background: `url("${image}") center center / cover scroll no-repeat`,
+                                }}
 
+                            ></div>
 
-                <div className={`bg-[url(/cover-mobile/image_58.png)]  pb-6 bg-cover flex items-end justify-center`} style={{
-                    height: windowHeight-96
-                }}>
-                    <FooterMobile/>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
 
-                </div>
-
-
-
-
-            </section>
-
-
-        </>
+        </main>
 
 
     )
 }
+
