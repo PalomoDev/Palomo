@@ -26,34 +26,26 @@ export const HomePageMobile = () => {
 
 
     return (
-        <main className="flex flex-col min-h-[100vh] w-full bg-gray-900">
-            <div className={'h-[10vh] bg-[#0C0601] border-b'}>
-                <HeaderMobile/>
+        <>
+            <div className={'w-[100vw]'}>
+                <div className={'h-[20vh] bg-gray-100 flex items-end justify-center'}>
+                    20%
+                </div>
+                <div className={'h-[20vh] bg-gray-300 flex items-end justify-center'}>
+                    40%
+                </div>
+                <div className={'h-[20vh] bg-gray-500 flex items-end justify-center'}>
+                    60%
+                </div>
+                <div className={'h-[20vh] bg-gray-700 flex items-end justify-center text-white'}>
+                    80%
+                </div>
+                <div className={'h-[20vh] bg-gray-900 flex items-end justify-center text-white'}>
+                    100%
+                </div>
             </div>
-            <div className={'h-[90vh] w-full'}>
-                <Swiper
+        </>
 
-                    pagination={{ type: "bullets", clickable: true }}
-                    autoplay={true}
-                    loop={true}
-                    modules={[Autoplay, Navigation, Pagination]}
-                >
-                    {data.map(({ id, image, title}) => (
-                        <SwiperSlide key={id}>
-                            <div
-                                className={'h-[90vh] w-full'}
-                                style={{
-                                    background: `url("${image}") center center / cover scroll no-repeat`,
-                                }}
-
-                            ></div>
-
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-
-        </main>
 
 
     )

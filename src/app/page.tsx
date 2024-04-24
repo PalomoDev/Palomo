@@ -17,8 +17,8 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className={'w-full h-auto block md:hidden'}><HomePageMobile/></div>
+    <main className="flex min-h-svh max-h-svh flex-col items-center justify-center bg-black ">
+        <div className={'block md:hidden'}><HomePageMobile/></div>
     </main>
   );
 }
