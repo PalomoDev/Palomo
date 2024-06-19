@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ copyright }) => {
                     <Social link={"https://t.me/sergio_palomo"} icon={'/svg/telegram.svg'} alt={'facebook link'}/>
                     <Social link={"https://api.whatsapp.com/send?phone=34600021408"} icon={'/svg/whatsapp.svg'} alt={'facebook link'}/>
                 </div>
-                <p className="text-center">{copyright}</p>
+                <p className="text-center md:text-[16px] text-[12px]">{copyright}</p>
             </div>
         </footer>
 

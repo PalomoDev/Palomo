@@ -21,23 +21,24 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
 
     ]
     return (
-    <html lang="en">
-      <body className={inter.className}
-            style={{
-                background: 'whitesmoke',
-                color: '#303030'
-            }}
-      >
-      <div className={'flex flex-col min-h-screen'}>
-      <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
-          <main className={'flex-grow min-h-[585px] mt-[40px] mx-auto select-none'}>
-              {children}
-          </main>
-      <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
-      </div>
-      </body>
-    </html>
-  );
+        <html lang="en">
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </head>
+        <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen max-w-full flex flex-col`}>
+            <div className={'flex flex-col max-h-screen'}>
+                <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
+                <main className={'flex-grow min-w-full md:mt-10 mt-5 max-w-full select-none'}>
+                    {children}
+                </main>
+                <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
+
+            </div>
+
+
+        </body>
+        </html>
+    );
 }
 
 // grid grid-rows-[auto,1fr] h-screen max-h-screen'
