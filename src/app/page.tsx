@@ -1,24 +1,14 @@
-"use client"
+import {Cover} from "@/app/ui/components/cover";
+import {getHome} from "@/app/lib/api/sanitClient";
 
-import {useAppContext} from "@/context";
-import useClientMediaQuery from "@/hooks/useClientMediaQuery"
-import {Block} from "@/app/arenera/block";
-import {useEffect} from "react";
-import Image from "next/image";
-import {HomePageMobile} from "@/app/ui/mobile/home-page";
+const HOME_LIST = '*[_type == "home"][0].cover[]{description, "imageUrl": image.asset->url}'
 
-
-export default function Home() {
-  // const isMobile = useClientMediaQuery(600)
-  // console.log(isMobile)
-  // const { mobile, setMobile } = useAppContext()
-  //
-  // useEffect(() => setMobile(isMobile))
-
-
-  return (
-    <main className="flex min-h-svh max-h-svh flex-col items-center justify-center bg-black ">
-        <div className={'block md:hidden'}><HomePageMobile/></div>
+export default async function Home() {
+    const homeArr = await getHome(HOME_LIST)
+    console.log(homeArr)
+    return (
+    <main className={''}>
+        <Cover homeArr={homeArr}/>
     </main>
   );
 }

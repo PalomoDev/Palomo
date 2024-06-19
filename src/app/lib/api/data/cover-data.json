@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "FEATURE",
+    "image": "/cover-laptop/cover_01.png"
+  },
+  {
+    "id": 2,
+    "title": "SERIES",
+    "image": "/cover-laptop/cover_02.png"
+  },
+  {
+    "id": 3,
+    "title": "SHORT",
+    "image": "/cover-laptop/cover_03.png"
+  },
+  {
+    "id": 4,
+    "title": "MUSIC",
+    "image": "/cover-laptop/cover_04.png"
+  },
+  {
+    "id": 5,
+    "title": "DOCUMENTARY",
+    "image": "/cover-laptop/cover_05.png"
+  }
+]
