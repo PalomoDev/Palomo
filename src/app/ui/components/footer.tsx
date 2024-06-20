@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ copyright }) => {
     return (
-        <footer className={"flex justify-center items-center  h-[150px]"}>
+        <footer className={"flex justify-center items-start md:items-center h-[200px] md:h-[150px]"}>
             <div className={'mx-auto flex flex-col gap-[25px]'}>
                 <div className={'social flex gap-[49px] mt-10 h-[25px]'}>
                     <Social link={"https://www.facebook.com/sergi0palomo"} icon={'/svg/facebook.svg'} alt={'facebook link'}/>
