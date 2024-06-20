@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle, links }) => {
         <header className={`${components.header_base} md:h-[210px]`}>
             <div className={`${components.logo_base} ${components.logo_md} `}>
                 <Link href="/" className={'flex flex-col justify-between'}>
-                    <h1 className="md:text-[69px] sm:text-[50px] text-[40px] min-w-fit mx-auto leading-tight select-none">
+                    <h1 className="md:text-[69px] sm:text-[50px] text-[34px] min-w-fit mx-auto leading-tight select-none">
                         {title}
                     </h1>
                     <h2 className="text-center md:text-[24px] text-[16px] uppercase opacity-50 select-none">
