@@ -1,5 +1,4 @@
 import Image from "next/image";
-import aboutData from '@/app/lib/api/data/about-data.json'
 import {AboutContent} from "@/app/about/about-content";
 import {getAbout} from "@/app/lib/api/sanitClient";
 

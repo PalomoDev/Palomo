@@ -2,15 +2,11 @@
 import ContactForm from "@/app/ui/components/contact-form";
 
 
-import Image from "next/image";
-import aboutData from '@/app/lib/api/data/about-data.json'
+
+
 
 export default function Contact() {
-    const content = aboutData.map((el) => {
-        return(
-            <p className={'text-base leading-relaxed mb-2'} key={el.id}>{el.text}</p>
-        )
-    })
+
     return (
         <>
             <div className={'container mx-auto max-w-[1440px] p-0 flex gap-[40px]'}>
