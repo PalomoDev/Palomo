@@ -13,6 +13,7 @@ const components ={
     menuBlock_base: 'h-[60px] text-[12px] w-5/6 flex justify-center items-center',
     nav_base: 'min-w-full pl-8 pr-8',
 
+    logo_md: 'md:h-[155px]',
     menuBlock_md: 'md:h-[55px] md:w-full md:text-[16px]  md:flex md:justify-center md:items-center md:border-y-2',
     nav_md: 'md:min-w-[500px] md:mx-auto'
 
@@ -21,9 +22,9 @@ const components ={
 const Header: React.FC<HeaderProps> = ({ title, subtitle, links }) => {
     return (
         <header className={`${components.header_base} md:h-[210px]`}>
-            <div className={`${components.logo_base} md:h-[155px]`}>
+            <div className={`${components.logo_base} ${components.logo_md} `}>
                 <Link href="/" className={'flex flex-col justify-between'}>
-                    <h1 className="md:text-[69px] sm:text-[50px] text-[40px] min-w-fit leading-tight select-none">
+                    <h1 className="md:text-[69px] sm:text-[50px] text-[40px] min-w-fit mx-auto leading-tight select-none">
                         {title}
                     </h1>
                     <h2 className="text-center md:text-[24px] text-[16px] uppercase opacity-50 select-none">
