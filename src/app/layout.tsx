@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/ui/components/header";
 import Footer from "@/app/ui/components/footer";
+import FullHeightWrapper from '@/app/ui/components/FullHeightWrapper';
 
 
 const inter = Montserrat({ subsets: ["latin"] });
@@ -26,13 +27,17 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </head>
         <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen max-w-full`}>
-        <div className="grid grid-rows-[auto_1fr_auto] h-screen max-h-screen md:flex md:flex-col md:h-auto">
-            <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
-            <main className="flex-grow min-w-full md:mt-10 max-w-full select-none">
-                {children}
-            </main>
-            <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
-        </div>
+        <FullHeightWrapper>
+            <div className="grid grid-rows-[auto_1fr_auto] min-h-full md:flex md:flex-col md:h-auto">
+                <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
+                <main className="flex-grow min-w-full md:mt-10 max-w-full select-none">
+                    {children}
+                </main>
+                <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
+            </div>
+
+        </FullHeightWrapper>
+
         </body>
         </html>
     );
