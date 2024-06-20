@@ -9,7 +9,7 @@ const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sergio Palomo color grading",
-  description: "All about color grading",
+  description: "remote color grading",
 };
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
@@ -25,17 +25,14 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </head>
-        <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen max-w-full flex flex-col`}>
-            <div className={'flex flex-col max-h-screen'}>
-                <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
-                <main className={'flex-grow min-w-full md:mt-10 mt-5 max-w-full select-none'}>
-                    {children}
-                </main>
-                <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
-
-            </div>
-
-
+        <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen max-w-full`}>
+        <div className="grid grid-rows-[auto_1fr_auto] h-screen md:flex md:flex-col md:h-auto">
+            <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
+            <main className="flex-grow min-w-full md:mt-10 max-w-full select-none">
+                {children}
+            </main>
+            <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
+        </div>
         </body>
         </html>
     );

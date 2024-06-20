@@ -75,7 +75,7 @@ const DynamicDeviceInfo: React.FC<CoverProps> = ({ coverData }) => {
                 </div>
             </BrowserView>
             <MobileView>
-                <Swiper key={'2'} className={'min-h-[448px] w-5/6  text-slate-50 m-3'} loop={true} autoplay={{
+                <Swiper key={'2'} className={'min-h-[448px] w-5/6  text-slate-50'} loop={true} autoplay={{
                     delay: 4000,
                     disableOnInteraction: false,
                 }} modules={[Autoplay]}>
