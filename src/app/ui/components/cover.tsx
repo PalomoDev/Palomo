@@ -2,16 +2,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import { Home } from "@/app/lib/api/types"
+
 import "swiper/css";
 
+
 interface CoverProps {
-    homeArr: Home[];
+    coverData: Home[][];
 }
 
 // import coverData from '@/app/lib/api/data/cover-data.json'
-export const Cover: React.FC<CoverProps> = ({homeArr}) => {
-    console.log(homeArr)
-    const slidesArr = homeArr.map((el) => {
+export const Cover: React.FC<CoverProps> = ({coverData}) => {
+
+    console.log(coverData)
+    const slidesArr = coverData[0].map((el) => {
         return (
             <SwiperSlide key={el.id} className={'w-[1440px] min-h-[585px] bg-no-repeat bg-cover flex flex-col content-end'} style={{
                 backgroundImage: `url("${el.imageUrl}")`
@@ -23,8 +26,9 @@ export const Cover: React.FC<CoverProps> = ({homeArr}) => {
     })
 
     return (
+
         <div className={'flex justify-center'}>
-            <Swiper key={'2'} className={'min-h-[585px] w-[1440px] border text-slate-50'} loop={true} autoplay={{
+            <Swiper key={'2'} className={'min-h-[585px] w-[1440px] text-slate-50'} loop={true} autoplay={{
                 delay: 4000,
                 disableOnInteraction: false,
             }} modules={[Autoplay]}>

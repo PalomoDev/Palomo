@@ -7,6 +7,12 @@ interface HeaderProps {
     links: Array<{ href: string, label: string }>;
 }
 
+const myComponents ={
+    menuBlock_base: 'h-[55px] text-[12px] w-5/6 flex justify-center items-center',
+    menuBlock_md: 'md:h-[55px] md:w-full  md:flex md:justify-center md:items-center md:border-y-2',
+    nav_md: 'md:w-[450px] md:mx-auto'
+}
+
 const Header: React.FC<HeaderProps> = ({ title, subtitle, links }) => {
     return (
         <header className={'text-basecolor min-w-fit flex flex-col items-center select-none'}>
@@ -20,11 +26,11 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle, links }) => {
                     </h2>
                 </Link>
             </div>
-            <div className={'md:h-[55px]  md:w-full  md:flex md:justify-center md:items-center md:border-y-2  md:block hidden'}>
-                <nav className={'md:w-[450px] md:mx-auto pl-8 pr-8'}>
-                    <ul className={'flex uppercase justify-between'}>
+            <div className={`${myComponents.menuBlock_base} ${myComponents.menuBlock_md}`}>
+                <nav className={'min-w-full pl-8 pr-8'}>
+                    <ul className={'min-w-full flex uppercase justify-between'}>
                         {links.map((link, index) => (
-                            <li className={'hover:opacity-50 text-[16px]'} key={index}>
+                            <li className={'hover:opacity-50'} key={index}>
                                 <Link href={link.href}>
                                     {link.label}
                                 </Link>

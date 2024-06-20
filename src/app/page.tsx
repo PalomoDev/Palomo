@@ -1,31 +1,29 @@
-
-import {Cover} from "@/app/ui/components/cover";
 import {getHome} from "@/app/lib/api/sanitClient";
-import Detect from "@/app/ui/components/detect";
+import HomeCover from "@/app/ui/components/homeCover";
 
 
 
 
 
-const HOME_LIST = '*[_type == "home"][0].cover[]{description, "imageUrl": image.asset->url}'
-
+const BROWSER_HOME_LIST = '*[_type == "home"][0].cover[]{description, "imageUrl": image.asset->url}'
+const MOBILE_HOME_LIST = '*[_type == "home"][1].cover[]{description, "imageUrl": image.asset->url}'
 
 
 
 export default async function Home() {
 
-    const homeArr = await getHome(HOME_LIST)
-    console.log(homeArr)
+    const browserHomeArr = await getHome(BROWSER_HOME_LIST)
+    const mobileHomeArr = await getHome(MOBILE_HOME_LIST)
+    const coverData = [browserHomeArr, mobileHomeArr]
+
 
 
 
 
     return (
         <main className={''}>
-            <Cover homeArr={homeArr}/>
-            <Detect/>
-
-
+            {/*<Cover coverData={coverData}/>*/}
+            <HomeCover coverData={coverData}/>
         </main>
     );
 }
