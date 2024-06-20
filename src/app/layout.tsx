@@ -26,9 +26,9 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </head>
-        <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen max-w-full`}>
-        <FullHeightWrapper>
-            <div className="grid grid-rows-[auto_1fr_auto] min-h-full md:flex md:flex-col md:h-auto">
+        <body className={`${inter.className} bg-whitesmoke text-[#303030] min-h-screen`}>
+
+            <div className="grid grid-rows-[auto_1fr_auto] max-h-dvh overflow-hidden md:flex md:flex-col md:h-auto">
                 <Header title={'SERGIO PALOMO'} subtitle={'remote color grading'} links={menu}/>
                 <main className="flex-grow min-w-full md:mt-10 max-w-full select-none">
                     {children}
@@ -36,7 +36,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
                 <Footer copyright={'Ⓒ 2024 SERGIO PALOMO'}/>
             </div>
 
-        </FullHeightWrapper>
+
 
         </body>
         </html>
